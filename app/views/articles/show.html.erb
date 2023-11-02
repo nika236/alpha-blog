@@ -9,7 +9,7 @@
   <%#= button_to "Destroy this article", @article, method: :delete %>
 <!--</div>-->
 
-<h1>show article detail</h1>
+<h1><%= @article.title %> article details</h1>
 
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
