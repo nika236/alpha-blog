@@ -10,6 +10,6 @@
 
   <p>
     <strong>Actions:</strong>
-        Placeholder
+        <%= link_to 'Delete', article_path(article), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </p>
 
