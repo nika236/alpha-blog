@@ -19,7 +19,7 @@
 
 
   <p>
-    <%= f.submit "Sing up" %>
+    <%= f.submit(@user.new_record? ? "Sing up" : "Update Acc") %>
   </p>
 
 <% end %>
