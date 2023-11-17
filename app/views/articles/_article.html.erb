@@ -1,6 +1,6 @@
 
 <p><strong>Username:</strong>
-  <%= article.user.username if article.user %>
+  <%= article.user.username %>
 </p>
 
 <p>
@@ -14,7 +14,7 @@
   </p>
 
   <p>
-    <strong>Actions:</strong>
+    <strong>Actions:</strong><br>
         <%= link_to 'Delete', article_path(article), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </p>
 

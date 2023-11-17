@@ -1,0 +1,24 @@
+<p><strong>Username:</strong>
+  <%= user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= user.email %>
+</p>
+
+<p>
+  <strong>Articles:</strong>
+  <% user.articles.each do |i| %>
+    <% if user.articles.count > 1 %>
+       (<%= i.title %>) &ndash;
+      <%else %>
+      <%= i.title %>
+    <%end %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Actions:</strong><br>
+  <%= link_to 'Delete', user_path(user), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</p>
