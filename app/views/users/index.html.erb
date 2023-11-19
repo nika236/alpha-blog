@@ -1,15 +1,17 @@
-<h1>List of Users</h1>
+<div class="container mt-4">
+  <h1 class="text-center">Alpha Bloggers</h1>
 
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Detail of User", user %>
-    </p>
-    <p>
-      <%= link_to "Edit User's Data", edit_user_path(user)%>
-    </p>
+    <div class="card mt-4">
+      <div class="card-body">
+        <%= render 'user', user: user %>
+      </div>
+    </div>
+
+
   <% end %>
 
-<p>
-  <%= link_to "Create new article", signup_path %>
-</p>
+  <div class="mt-4">
+    <%= link_to "Sign up", signup_path, class: 'btn btn-success' %>
+  </div>
+</div>

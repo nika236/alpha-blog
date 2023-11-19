@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
+
   # GET /articles/1/edit
   def edit
   end
@@ -39,8 +40,8 @@ class ArticlesController < ApplicationController
       render 'edit', status: :unprocessable_entity
     end
 
+  end
 
-end
   # DELETE /articles/1 or /articles/1.json
   def destroy
 
@@ -50,11 +51,12 @@ end
   end
 
   private
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    def article_params
-      params.require(:article).permit(:title, :description)
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
 end

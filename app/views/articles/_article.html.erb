@@ -1,20 +1,21 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <p class="card-text">
+      <strong>Username:</strong> <%= article.user.username %>
+    </p>
 
-<p><strong>Username:</strong>
-  <%= article.user.username %>
-</p>
+    <p class="card-text">
+      <strong>Title:</strong> <%= article.title %>
+    </p>
 
-<p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
+    <p class="card-text">
+      <strong>Description:</strong> <%= article.description %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= article.description %>
-  </p>
-
-  <p>
-    <strong>Actions:</strong><br>
-        <%= link_to 'Delete', article_path(article), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  </p>
-
+    <div class="d-flex justify-content-end">
+      <%= link_to 'Delete', article_path(article),
+                  class: 'btn btn-danger',
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>

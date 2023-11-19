@@ -1,24 +1,28 @@
-<p><strong>Username:</strong>
-  <%= user.username %>
-</p>
+<h1><%= user.username %>'s Details</h1>
 
-<p>
-  <strong>Email:</strong>
-  <%= user.email %>
-</p>
-
-<p>
-  <strong>Articles:</strong>
-  <% user.articles.each do |i| %>
-    <% if user.articles.count > 1 %>
-       (<%= i.title %>) &ndash;
-      <%else %>
-      <%= i.title %>
-    <%end %>
+<p class="card-text">
+  <strong>Username:</strong> <%= link_to user.username, user %></p>
+<p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+<p class="card-text"><strong>Articles:</strong>
+  <% user.articles.each_with_index do |article, index| %>
+    <%= link_to article.title, article %>
+    <% unless index == user.articles.size - 1 %>
+      &ndash;
+    <% end %>
   <% end %>
 </p>
-
-<p>
-  <strong>Actions:</strong><br>
-  <%= link_to 'Delete', user_path(user), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<p class="card-text">
+<div class="mt-2">
+  <%= link_to "Detail of User", user,
+              class: 'btn btn-primary me-2' %>
+  <%= link_to "Edit User's Data", edit_user_path(user),
+              class: 'btn btn-secondary' %>
+  <%= link_to 'Delete', user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: 'btn btn-danger' %>
+</div>
 </p>
+
+
+
+
+

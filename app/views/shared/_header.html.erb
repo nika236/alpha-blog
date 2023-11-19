@@ -1,22 +1,20 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href='<%= articles_path %>'>Alpha Blog</a>
+    <a class="navbar-brand" href='<%= root_path %>'>Alpha Blog </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<%= articles_path %>">Articles</a>
+          <a class="nav-link active" href='<%= users_path %>'>Bloggers </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<%= users_path %>">Users</a>
+          <a class="nav-link active" aria-current="page" href="<%= articles_path %>">Articles </a>
         </li>
-
         <li class="nav-item">
-          <a  href="<%= signup_path %>" >Sign in</a>
+          <a class="nav-link active" href="<%= signup_path %>">Sign in </a>
         </li>
-
       </ul>
     </div>
   </div>

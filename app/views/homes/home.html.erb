@@ -1,5 +1,46 @@
-<h1>This is the Home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
-<p><%= link_to 'Return to articles listing page', articles_path %></p>
-<p><%= link_to 'About page', about_path %></p>
-<p><%= link_to "Sign up", signup_path %></p>
+<div class="container mt-5">
+  <h1>This is the Home page</h1>
+
+  <div class="alert alert-info">
+    <p>Welcome to our platform! Explore the latest articles and engage with our community.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Featured Articles</h5>
+      <p class="card-text">Discover our handpicked selection of articles that cover a variety of topics.</p>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Community Forum</h5>
+      <p class="card-text">Join discussions, ask questions, and connect with like-minded individuals in our forum.</p>
+    </div>
+  </div>
+
+  <p class="mt-4">
+    <%= link_to 'Articles listing page', articles_path, class: 'btn btn-primary mr-2' %>
+    <%= link_to 'About page', about_path, class: 'btn btn-secondary mr-2' %>
+    <%= link_to "Sign up", signup_path, class: 'btn btn-success' %>
+  </p>
+</div>
+
+<!-- Bootstrap JS and Popper.js (Optional) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

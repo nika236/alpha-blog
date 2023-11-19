@@ -1,9 +1,17 @@
-<h1><%= @article.title %> article details</h1>
+<div class="container mt-4">
+  <h1><%= @article.title.capitalize %>'s article Details</h1>
 
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-<p><strong>Username:</strong><%= @article.user.username if @article.user %></p>
+  <div class="card mt-4">
+    <div class="card-body">
+      <p class="card-text"><strong>Title:</strong> <%= @article.title %></p>
+      <p class="card-text"><strong>Description:</strong> <%= @article.description %></p>
+      <p class="card-text"><strong>Username:</strong> <%= @article.user.username if @article.user %></p>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm:" Are you sure? " } %> |
-<%= link_to 'Return to articles listing', articles_path %>
+  <div class="mt-4">
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary me-2' %>
+    <%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger me-2' %>
+    <%= link_to 'Return to Articles Listing', articles_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
