@@ -1,17 +1,28 @@
 <div class="container mt-4">
   <h1 class="text-center">Alpha Bloggers</h1>
 
+  <div class="flickr_pagination ">
+    <%= will_paginate @users, :container => false %>
+  </div>
+
+
   <% @users.each do |user| %>
     <div class="card mt-4">
       <div class="card-body">
         <%= render 'user', user: user %>
       </div>
+      <div class="card-footer text-muted">
+        <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+      </div>
     </div>
-
-
   <% end %>
 
   <div class="mt-4">
     <%= link_to "Sign up", signup_path, class: 'btn btn-success' %>
   </div>
 </div>
+
+<div class="flickr_pagination mb-2">
+  <%= will_paginate @users, :container => false%>
+</div>
+
