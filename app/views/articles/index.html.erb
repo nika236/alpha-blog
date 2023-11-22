@@ -11,7 +11,11 @@
     <p>
       <%= link_to "Show this article", article, class: 'btn btn-primary me-2' %>
       <%= link_to "Edit Article", edit_article_path(article), class: 'btn btn-secondary' %>
+      <%= link_to 'Delete', article_path(article),
+                  class: 'btn btn-danger',
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </p>
+
   <% end %>
 </div>
 
