@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   before_action :set_user, only: [:show, :update, :edit, :destroy]
   before_action :require_user, only: [:edit, :update]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
+=======
+  before_action :set_user, only: [:show, :edit, :update]
+>>>>>>> a00aeb90eaaa43eab0f7f8abf6765516c30d8f66
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
   end
@@ -37,6 +41,7 @@ class UsersController < ApplicationController
       render 'new', status: :unprocessable_entity
     end
   end
+<<<<<<< HEAD
   def destroy
     @user.destroy
     session[:user_id] = nil
@@ -50,14 +55,24 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+=======
+
+  private
+
+>>>>>>> a00aeb90eaaa43eab0f7f8abf6765516c30d8f66
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
 
+<<<<<<< HEAD
   def require_same_user
     if current_user != @user
       flash[:alert] = "You can only edit your own account"
       redirect_to @user
     end
+=======
+  def set_user
+    @user = User.find(params[:id])
+>>>>>>> a00aeb90eaaa43eab0f7f8abf6765516c30d8f66
   end
 end

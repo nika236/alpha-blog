@@ -13,6 +13,7 @@
     <strong>Description:</strong> <%= article.description %>
   </p>
 
+<<<<<<< HEAD
   <% if logged_in? && article.user == current_user %>
     <div class="d-flex justify-content-end">
       <%= link_to 'Delete', article_path(article),
@@ -20,4 +21,9 @@
                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
   <% end %>
+=======
+  <div class="d-flex justify-content-end">
+    >
+  </div>
+>>>>>>> a00aeb90eaaa43eab0f7f8abf6765516c30d8f66
 </div>
