@@ -16,13 +16,14 @@
       </div>
     </div>
   <% end %>
-
-  <div class="mt-4">
-    <%= link_to "Sign up", signup_path, class: 'btn btn-success' %>
-  </div>
+  <% if !logged_in? %>
+    <div class="mt-4">
+      <%= link_to "Sign up", signup_path, class: 'btn btn-success' %>
+    </div>
+  <% end %>
 </div>
 
 <div class="flickr_pagination mb-2">
-  <%= will_paginate @users, :container => false%>
+  <%= will_paginate @users, :container => false %>
 </div>
 

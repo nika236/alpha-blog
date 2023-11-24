@@ -13,9 +13,11 @@
     <strong>Description:</strong> <%= article.description %>
   </p>
 
-  <div class="d-flex justify-content-end">
-    <%= link_to 'Delete', article_path(article),
-                class: 'btn btn-danger',
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  </div>
+  <% if logged_in? && article.user == current_user %>
+    <div class="d-flex justify-content-end">
+      <%= link_to 'Delete', article_path(article),
+                  class: 'btn btn-danger',
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
 </div>
